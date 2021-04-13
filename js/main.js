@@ -249,9 +249,10 @@ $(document).ready(function() {
 	var contactHeight = $('#contact-form-wrapper').height();
 	$('#contact-form-wrapper').height(contactHeight);
 
+	/*
 	$('#contact-send-btn').click(function(e) {
 		e.preventDefault();
-	    var postdata = $('.contact-form-wrapper form').serialize();
+	    var postdata = $('.contact-form').serialize();
 	     $.ajax({
 	        type: 'POST',
 	        url: 'https://formspree.io/xrqqkjrm',
@@ -261,7 +262,25 @@ $(document).ready(function() {
 	           $('#contact-form-wrapper').toggleClass('sent');
 	        }
 	    });
+*/
 
+var form = document.getElementById("contact-form");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+		     $('#contact-form-wrapper').toggleClass('sent');
+      }).catch(error => {
+
+      });
 
 		setTimeout(function() {
 			$('#contact-form').fadeOut(600);
@@ -278,8 +297,14 @@ $(document).ready(function() {
 		setTimeout(function() {
 			$('#contact-form-success').addClass('is-active');
 		}, 1750);
-	});
 
+	}
+	form.addEventListener("submit", handleSubmit)
+
+
+	/*
+	});
+*/
 
 	// ===================================================
 	// INLINE SVG

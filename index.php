@@ -560,13 +560,14 @@
             <div id="contact-form-wrapper">
 
               <!-- Main form -->
-              <form id="contact-form">
+              <form id="contact-form" action="https://formspree.io/f/xrqqkjrm" method="POST">
                 <!-- From -->
                 <div class="d-flex">
                   <label class="form-label-left" for="#contact-form-name">From</label>
                   <div class="w-100">
                     <input name="name" id="contact-form-name" type="text" placeholder="Name" class="form-control" required>
                     <input name="email" id="contact-form-email" type="email" placeholder="Email" class="form-control" required>
+                    <input type="hidden" name="_cc" value="gloria@tomorrow-digital.com,simon@tomorrow-digital.com" />
                   </div>
                 </div>
                 <hr>
