@@ -12,7 +12,7 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <base href="<?php echo $siteRoot; ?>">
+  <!--<base href="<?php echo $siteRoot; ?>">-->
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
