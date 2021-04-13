@@ -1,0 +1,73 @@
+// Responsive styles
+
+// Medium devices (portrait tablets, over 767px)
+@media (min-width: 767px) {
+
+	// NAV
+	#head-nav #head-logo svg, #head-nav #nav-mobile #nav-mobile-logo {
+		width: calc(100vw - 240px);
+	}
+
+	// INTRO
+	#intro {
+		padding-top: 144px;
+	}
+	#intro-slider {
+		flex: 0 0 55%;
+		max-width: 55%;
+
+		.slick-slide img {
+			border-radius: 6px 0 0 6px;
+		}
+	}
+
+	// WORK
+	#work {
+
+		> .row {
+			justify-content: space-between !important;
+
+			> .container > .row {
+				justify-content: space-between !important;
+			}
+		}
+		.work-grid-item {
+			margin-top: 16px;
+			margin-bottom: 16px;
+
+			h3 {
+				font-size: 16px;
+			}
+			p {
+				font-size: 16px;
+			}
+			&.work-grid-rect-tall {
+				@include flex-w(41.66667%);
+			}
+			&.work-grid-rect-wide {
+				@include flex-w(58.33333%);
+			}
+			&.work-grid-square-small {
+				@include flex-w(33.33333%);
+			}
+			&.work-grid-square-large {
+				@include flex-w(58.33333%);
+			}
+			&.work-grid-vid-small {
+				@include flex-w(33.33333%);
+			}
+			&.work-grid-vid-mid {
+				@include flex-w(41.66667%);
+			}
+			&.work-grid-vid-large {
+				@include flex-w(58.33333%);
+			}
+		}
+		#client-logos {
+
+			svg {
+				max-width: 90%;
+			}
+		}
+	}
+}

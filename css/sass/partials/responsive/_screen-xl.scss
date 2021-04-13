@@ -1,0 +1,31 @@
+// Responsive styles
+
+// Extra large devices (desktop computers, over 1199px)
+@media (min-width: 1199px) {
+
+	// LEFT GUTTER
+	.main-section > .row > .container {
+		margin-left: auto;
+		margin-right: 0;
+		max-width: calc(100vw - 240px);
+	}
+
+	// WORK
+	#work {
+
+		.work-grid-item {
+			margin-top: 24px;
+			margin-bottom: 24px;
+
+			h3 {
+				font-size: 20px;
+			}
+			p {
+				font-size: 20px;
+			}
+			&.work-grid-rect-tall {
+				@include flex-w(33.33333%);
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+// Responsive styles
+
+// Large devices (desktop computers, over 991px)
+@media (min-width: 991px) {
+
+	// LEFT GUTTER
+	.main-section {
+		overflow: hidden;
+		position: relative;
+	}
+	.main-section > .row {
+		height: 100%;
+	}
+	.main-section > .row > .container {
+		margin-left: auto;
+		margin-right: 0;
+		max-width: calc(100vw - 160px);
+	}
+
+	// NAV
+	#head-nav {
+
+		#head-logo svg {
+			width: 45vw;
+		}
+	}
+
+	// INTRO
+	#intro {
+		height: 90vh;
+		max-height: 900px;
+		padding-top: 80px;
+	}
+
+	// WORK
+	#work {
+
+		> .row > .container > .row {
+			justify-content: space-between !important;
+		}
+	}
+
+	// MODAL
+	#work-grid-item-modal {
+		z-index: 9999;
+
+		.modal-dialog {
+			width: 1200px;
+			max-width: calc(100vw - 128px);
+
+			.modal-content {
+
+				.close {
+					top: 0; right: -48px;
+					transform: none;
+
+					svg {
+						font-size: 32px;
+					}
+				}
+			}
+		}
+	}
+}

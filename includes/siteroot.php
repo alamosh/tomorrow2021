@@ -1,0 +1,1 @@
+<?php $siteRoot = "http://tomorrow-digital.com/"; ?>

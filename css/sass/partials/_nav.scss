@@ -1,0 +1,253 @@
+// Head navigation styles
+
+#head-nav {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	z-index: 9996;
+	@include trans(background-color, height);
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	// MAIN LOGO
+	#head-logo {
+		position: absolute;
+		top: 16px; left: 12px;
+
+		svg {
+			width: calc(100vw - 120px);
+			@include trans(width);
+		}
+	}
+
+	// SOCIAL ICONS ON LARGE SCREENS
+	#head-social {
+		position: absolute;
+		top: 12px; right: 12px;
+
+		ul {
+
+			li {
+				display: inline-block;
+
+				a {
+					color: $black;
+					padding: 4px 8px;
+
+					svg {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	// SCROLLED
+	&.is-scrolled {
+		background-color: rgba($yellow, 0.9);
+		height: 48px;
+
+		#head-logo {
+			top: 12px;
+
+			svg {
+				width: 180px;
+			}
+		}
+		#nav-mobile #nav-mobile-logo {
+			top: 14px;
+			width: 180px;
+		}
+		#nav-mobile #nav-mobile-toggler {
+			height: 48px;
+		}
+	}
+
+	// MOBILE NAV
+
+	#nav-mobile {
+		overflow: hidden;
+		position: absolute;
+		top: 0; right: 0;
+		@include trans(background-color, width, height);
+		width: 64px; height: 64px;
+		max-width: calc(100vw - 64px);
+
+		#nav-mobile-toggler {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0; right: 0;
+			width: 64px; height: 64px;
+			@include trans(height);
+
+			.nav-mobile-toggler-dot {
+				border: 3px solid $black;
+				border-radius: 50%;
+				margin: 0 2px;
+				width: 10px; height: 10px;
+				@include trans(border-color);
+			}
+		}
+		#nav-mobile-main, #nav-mobile-social {
+			opacity: 0;
+			position: absolute;
+			right: 12px;
+			visibility: hidden;
+			@include trans(opacity, visibility);
+
+			li a {
+				color: $white;
+			}
+		}
+		#nav-mobile-main {
+			top: 50%;
+			transform: translateY(-50%);
+
+			li {
+				margin: 12px;
+				text-align: right;
+
+				a {
+					font-size: 24px;
+					font-weight: 700;
+				}
+			}
+		}
+		#nav-mobile-social {
+			bottom: 20px;
+			display: flex;
+
+			li {
+				margin: 0 12px 0 24px;
+
+				a svg {
+					font-size: 20px;
+				}
+			}
+		}
+		#nav-mobile-logo {
+			position: absolute;
+			top: 16px; right: 100vw;
+			transform: translateX(calc(100% + 12px));
+			width: calc(100vw - 120px);
+			@include trans(width);
+
+			path {
+				fill: $yellow;
+			}
+		}
+		&.is-open {
+			background-color: rgba($black, 0.9);
+			border-bottom-left-radius: 12px;
+			width: 340px; height: 360px;
+
+			#nav-mobile-toggler .nav-mobile-toggler-dot {
+				border-color: $yellow;
+			}
+			#nav-mobile-main, #nav-mobile-social {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+// DOT NAV ON LARGE SCREENS
+#dot-nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 50%; left: -16px;
+	transform: translateY(-50%);
+
+	li {
+
+		a {
+			color: $white;
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			font-weight: $bold;
+			@include trans(color);
+
+			&:before {
+				content: '';
+				display: inline-block;
+				border: 12px solid $white;
+				border-radius: 50%;
+				margin-right: 6px;
+				width: 48px; height: 48px;
+				@include trans(border-color);
+			}
+		}
+		+ li {
+			margin-top: 8px;
+		}
+	}
+	#dot-nav-work a:hover {
+		color: $black;
+
+		&:before {
+			border-color: $black;
+		}
+	}
+	#dot-nav-team a:hover {
+		color: $red;
+
+		&:before {
+			border-color: $red;
+		}
+	}
+	#dot-nav-contact a:hover {
+		color: $blue;
+
+		&:before {
+			border-color: $blue;
+		}
+	}
+	&.dot-nav-work {
+
+		#dot-nav-work a {
+			color: $yellow;
+
+			&:before {
+				border-color: $yellow;
+			}
+		}		
+	}
+	&.dot-nav-team {
+
+		#dot-nav-team a {
+			color: $black;
+
+			&:before {
+				border-color: $black;
+			}
+		}
+	}
+	&.dot-nav-contact {
+
+		#dot-nav-contact a {
+			color: $yellow;
+
+			&:before {
+				border-color: $yellow;
+			}
+		}
+	}
+}

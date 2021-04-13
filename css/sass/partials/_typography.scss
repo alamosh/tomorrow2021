@@ -1,0 +1,58 @@
+// TYPOGRAPHY
+
+// Font families
+$font-body: 'Archivo', sans-serif;
+$font-display: 'Paytone One', sans-serif;
+
+.font-display {
+	font-family: $font-display;
+}
+
+// Weights
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi: 600;
+$bold: 700;
+
+.font-light {
+	font-weight: $light;
+}
+.font-regular {
+	font-weight: $regular;
+}
+.font-medium {
+	font-weight: $medium;
+}
+.font-semi {
+	font-weight: $semi;
+}
+.font-bold {
+	font-weight: $bold;
+}
+
+// Headings
+
+
+// Body text
+.font-0-75 {
+	font-size: 0.75em;
+}
+.font-1 {
+	font-size: 1em;
+}
+.font-1-25 {
+	font-size: 1.25em;
+}
+.font-1-5 {
+	font-size: 1.5em;
+}
+.font-2 {
+	font-size: 2em;
+}
+.font-2-5 {
+	font-size: 2.5em;
+}
+.font-3 {
+	font-size: 3em;
+}

@@ -1,0 +1,53 @@
+// Video popup styles
+
+#work-grid-item-modal {
+	z-index: 9999;
+
+	.modal-dialog {
+
+		.modal-content {
+			background-color: $black;
+
+			.close {
+				background-color: transparent;
+				border: none;
+				position: absolute;
+				top: -64px; right: 50%;
+				transform: translateX(50%);
+
+				svg {
+					color: $white;
+					font-size: 36px;
+				}
+			}
+			.modal-body {
+				padding-bottom: 0;
+
+				video {
+					max-width: 100%;
+				}
+			}
+			.modal-footer {
+				border: none;
+				align-items: flex-start;
+				flex-direction: column;
+
+				> * {
+					margin: 0;
+				}
+			}
+		}
+	}
+	&.show {
+		display: flex !important;
+		align-items: center;
+	}
+}
+.modal-backdrop {
+	background-color: $black;
+	z-index: 9998;
+
+	&.show {
+		opacity: 0.8;
+	}
+}

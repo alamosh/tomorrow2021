@@ -1,0 +1,126 @@
+// Preloader styles
+
+#preloader {
+	background-color: $black;
+	display: flex;
+	// display: none;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: 9998;
+
+	#preloader-content {
+		animation: 1.25s linear 0.25s both fadeIn;
+
+		.preloader-circle {
+			border: 16px solid $gray;
+			border-radius: 50%;
+			float: left;
+			margin: 0 6px;
+			transform-origin: calc(-50% - 12px) 50%;
+			width: 64px; height: 64px;
+
+			&:nth-of-type(1) {
+				animation: 4s ease-in-out 0.25s infinite both circleCycle1;
+				border-color: $yellow;
+			}
+			&:nth-of-type(2) {
+				animation: 4s ease-in-out 0.25s infinite both circleCycle2;
+				border-color: $red;
+			}
+			&:nth-of-type(3) {
+				animation: 4s ease-in-out 0.25s infinite both circleCycle3;
+				border-color: $blue;
+			}
+		}
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes circleCycle1 {
+	0% {
+		border-color: $gray;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	20% {
+		border-color: $yellow;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	40% {
+		border-color: $red;
+		transform: translate(calc(100% + 12px), calc(-100% - 12px)) rotate(0deg);
+	}
+	60% {
+		border-color: $white;
+		transform: translate(calc(100% + 12px), 0) rotate(0deg);
+	}
+	80% {
+		border-color: $pink;
+		transform: translate(calc(200% + 24px), 0) rotate(0deg);
+	}
+	100% {
+		border-color: $gray;
+		transform: translate(calc(200% + 24px), 0) rotate(180deg);
+	}
+}
+@keyframes circleCycle2 {
+	0% {
+		border-color: $gray;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	20% {
+		border-color: $red;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	40% {
+		border-color: $white;
+		transform: translate(calc(100% + 12px), 0) rotate(0deg);
+	}
+	60% {
+		border-color: $yellow;
+		transform: translate(calc(100% + 12px), 0) rotate(-180deg);
+	}
+	80% {
+		border-color: $blue;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	100% {
+		border-color: $gray;
+		transform: translate(0, 0) rotate(0deg);
+	}
+}
+@keyframes circleCycle3 {
+	0% {
+		border-color: $gray;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	20% {
+		border-color: $blue;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	40% {
+		border-color: $pink;
+		transform: translate(calc(-100% - 12px), calc(100% + 12px)) rotate(0deg);
+	}
+	60% {
+		border-color: $red;
+		transform: translate(0, 0) rotate(0deg);
+	}
+	80% {
+		border-color: $yellow;
+		transform: translate(0, 0) rotate(180deg);
+	}
+	100% {
+		border-color: $gray;
+		transform: translate(0, 0) rotate(360deg);
+	}
+}

@@ -1,0 +1,187 @@
+// BASE STYLES
+
+// Site Colors
+$black: #1a1414;
+$gray: #64655d;
+$white: #ebeae8;
+$yellow: #fcc72d;
+$red: #e9490f;
+$blue: #17799e;
+$pink: #ef6c8b;
+
+// Mixins
+@mixin flex-w($width) {
+	flex: 0 0 $width;
+	width: $width;
+}
+@mixin trans($prop...) {
+	transition-property: $prop;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+}
+
+// Global styles
+body {
+	background-color: $black;
+	color: $white;
+	font-family: $font-body;
+}
+
+// Structure
+.main-section {
+	padding-top: 64px;
+	padding-bottom: 64px;
+}
+
+// Buttons
+.btn {
+}
+
+// Helper classes
+.bg-white {
+	background-color: $white;
+	color: $black;
+}
+.bg-yellow {
+	background-color: $yellow;
+	color: $black;
+}
+.bg-red {
+	background-color: $red;
+
+	.arrow {
+		border-color: $black !important;
+
+		&:before {
+			color: $black;
+		}
+	}
+}
+.bg-blue {
+	background-color: $blue;
+
+	.arrow {
+		border-color: $yellow !important;
+
+		&:before {
+			color: $yellow;
+		}
+	}
+}
+.bg-pink {
+	background-color: $pink;
+}
+.font-black {
+	color: $black;
+}
+.font-white {
+	color: $white;
+}
+.font-yellow {
+	color: $yellow;
+}
+.font-red {
+	color: $red;
+}
+.font-blue {
+	color: $blue;
+}
+.font-pink {
+	color: $pink;
+}
+
+// Arrows
+.arrow {
+	border-color: $white;
+	border-style: solid;
+	margin: 24px 0;
+	position: relative;
+	width: 100%; height: 64px;
+	max-height: 100%; max-width: 200px;
+
+	&:before {
+		color: $white;
+		display: block;
+		font-family: 'Font Awesome 5 Free';
+		font-size: 20px;
+		font-weight: 900;
+		line-height: 0;
+		position: absolute;
+	}
+	&.arrow-left-up:before, &.arrow-right-up:before {
+		content: '\f077';
+	}
+	&.arrow-up-right:before, &.arrow-down-right:before {
+		content: '\f054';
+	}
+	&.arrow-left-down:before, &.arrow-right-down:before {
+		content: '\f078';
+	}
+	&.arrow-up-left:before, &.arrow-down-left:before {
+		content: '\f053';
+	}
+	&.arrow-up-right, &.arrow-left-down {
+		border-width: 3px 0 0 3px;
+		border-radius: 24px 0 0 0;
+	}
+	&.arrow-up-left, &.arrow-right-down {
+		border-width: 3px 3px 0 0;
+		border-radius: 0 24px 0 0;
+	}
+	&.arrow-down-right, &.arrow-left-up {
+		border-width: 0 0 3px 3px;
+		border-radius: 0 0 0 24px;
+	}
+	&.arrow-down-left, &.arrow-right-up {
+		border-width: 0 3px 3px 0;
+		border-radius: 0 0 24px 0;
+	}
+	&.arrow-up-right, &.arrow-right-up {
+
+		&:before {
+			top: -1px; right: -1px; 
+		}
+	}
+	&.arrow-up-left, &.arrow-left-up {
+
+		&:before {
+			top: -1px; left: -1px; 
+		}
+	}
+	&.arrow-down-right, &.arrow-right-down {
+
+		&:before {
+			bottom: -1px; right: -1px; 
+		}
+	}
+	&.arrow-down-left, &.arrow-left-down {
+
+		&:before {
+			bottom: -1px; left: -1px; 
+		}
+	}
+	&.arrow-up-right:before {
+		transform: translate(1px, -1px);
+	}
+	&.arrow-up-left:before {
+		transform: translate(-1px, -1px);
+	}
+	&.arrow-down-right:before {
+		transform: translate(1px, 0);
+	}
+	&.arrow-down-left:before {
+		transform: translate(-1px, 0);
+	}
+	&.arrow-right-up:before {
+		transform: translate(50%, 1px);
+	}
+	&.arrow-left-up:before {
+		transform: translate(calc(-50% - 0.5px), 1px);
+	}
+	&.arrow-right-down:before {
+		transform: translate(50%, -3px);
+	}
+	&.arrow-left-down:before {
+		transform: translate(calc(-50% - 0.5px), -3px);
+	}
+}

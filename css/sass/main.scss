@@ -1,0 +1,21 @@
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Modules and Variables
+@import "partials/typography";
+@import "partials/base";
+
+// Partials
+@import "partials/preloader";
+@import "partials/nav";
+@import "partials/footer";
+@import "partials/home";
+@import "partials/slider";
+@import "partials/modal";
+
+// Responsive styles
+@import "partials/responsive/screen-xs";
+@import "partials/responsive/screen-sm";
+@import "partials/responsive/screen-md";
+@import "partials/responsive/screen-lg";
+@import "partials/responsive/screen-xl";
