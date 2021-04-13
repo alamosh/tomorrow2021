@@ -15,7 +15,7 @@ do
 done
 
 
-#Copy all CSS files
+# Copy all CSS files
 for f in *.css;
 do
     cat $f > "$DEST/$f";
@@ -23,7 +23,7 @@ do
 done
 
 
-#Copy all JS files
+# Copy all JS files
 for f in *.js;
 do
     cat $f > "$DEST/$f";
